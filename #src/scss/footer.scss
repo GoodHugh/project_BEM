@@ -1,0 +1,155 @@
+footer {
+}
+//====================================================================================================
+.footer {
+    // .footer__content
+    &__content {
+        width: 100%;
+        height: 400px;
+        position: relative;
+        &::after {
+            content: "";
+            background-color: #0f0f0f;
+            opacity: 85%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 400px;
+        }
+    }
+    // .footer__image
+    &__image {
+    }
+    // .footer__body
+    &__body {
+        width: 100%;
+        height: 400px;
+        position: relative;
+        z-index: 5;
+        padding: 80px 0 40px 0;
+    }
+    // .footer__colums
+    &__colums {
+        display: flex;
+        justify-content: space-between;
+    }
+    // .footer__colums-description
+    &__colums-description {
+        padding-right: 7.5px;
+    }
+    // .footer__colums-description-text
+    &__colums-description-text {
+        font-family: $fontFamily;
+        font-size: 14px;
+        color: #fff;
+        line-height: 150%;
+    }
+    // .footer__colums-categories
+    &__colums-categories {
+        display: flex;
+        flex-direction: column;
+        padding: 0 7.5px;
+        height: 400px;
+    }
+    // .footer__colums-categories-title
+    &__colums-categories-title {
+    }
+    // .footer__colums-buttons
+    &__colums-buttons {
+        display: flex;
+        flex-direction: column;
+    }
+    // .footer__colums-button-clock
+    &__colums-button-clock {
+    }
+    // .footer__colums-button-bracelets
+    &__colums-button-bracelets {
+        margin-top: 5px;
+    }
+    // .footer__colums-button-belts
+    &__colums-button-belts {
+        margin-top: 5px;
+    }
+    // .footer__colums-button-jewelry
+    &__colums-button-jewelry {
+        margin-top: 5px;
+    }
+    // .footer__colums-button-cufflinks
+    &__colums-button-cufflinks {
+        margin-top: 5px;
+    }
+    // .footer__colums-mailing
+    &__colums-mailing {
+        padding-left: 0 7.5px;
+    }
+    // .footer__colums-mailing-title
+    &__colums-mailing-title {
+    }
+    // .footer__colums-mailing-text
+    &__colums-mailing-text {
+        font-family: $fontFamily;
+        font-size: 14px;
+        color: #fff;
+        line-height: 150%;
+        text-align: center;
+        padding-bottom: 35px;
+    }
+    // .footer__colums-mailing-form
+    &__colums-mailing-form {
+        display: flex;
+        padding-left: 0 7.5px;
+    }
+    // .footer__colums-mailing-input
+    &__colums-mailing-input {
+        width: 210px;
+        height: 42px;
+        background-color: #fff;
+        opacity: 40%;
+        flex: 1 1 auto;
+    }
+    // .footer__colums-mailing-button
+    &__colums-mailing-button {
+        display: block;
+        background-color: #0f0f0f;
+        color: #fff;
+        font-family: $fontFamily;
+        font-size: 14px;
+        padding: 10px 20px;
+        text-align: center;
+        text-transform: uppercase;
+        line-height: 150%;
+        letter-spacing: 5%;
+        transition: all 0.5s ease 0s;
+        &:hover {
+            background-color: #191b1c;
+        }
+        &:active {
+            background-color: #0f0f0f;
+        }
+    }
+}
+.footer {
+    // .footer__last-line
+    &__last-line {
+        width: 100%;
+        background-color: #000;
+    }
+    // .footer__last-line-bodi
+    &__last-line-body {
+        display: flex;
+        align-items: center;
+    }
+    // .footer__last-line-bodi-copirat
+    &__last-line-bodi-copirat {
+        font-family: $fontFamily;
+        font-size: 12px;
+        color: #D0D0D0;
+        text-align: center;
+        line-height: 16px;
+        padding: 17px 0;
+        flex: 1 1 auto;
+    }
+}
+
+//====================================================================================================

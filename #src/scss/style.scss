@@ -1,0 +1,314 @@
+@use "sass:math";
+//<МИКСИНЫ>===============================================================================================
+@import "mixins";
+//</МИКСИНЫ>===============================================================================================
+
+//<ШРИФТЫ>===============================================================================================
+
+//<Подключаем шрифты>=======================================================================================
+//&display=swap&subset=cyrillic-ext
+@import "fonts";
+//</Подключаем шрифты>=======================================================================================
+
+//<Иконочные шрифты>==========================================================================================
+@import "icons";
+//</Иконочные шрифты>==========================================================================================
+
+//<Шрифт по умолчанию>==========================================================================================
+$fontFamily: "PT Sans";
+$fontSize: 14;
+//</Шрифт по умолчанию>==========================================================================================
+
+//</ШРИФТЫ>=======================================================================================================
+
+//<ПЕРЕМЕННЫЕ>===========================================================================================================
+$minWidth: 320px;
+$maxWidth: 1920;
+$maxWidthContainer: 1170;
+$md1: $maxWidthContainer + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+
+$mainColor: #000;
+
+//</ПЕРЕМЕННЫЕ>===========================================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+@import "null";
+body {
+	color: $mainColor;
+	&._lock {
+		overflow: hidden;
+	}
+}
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
+//<ОБОЛОЧКА>===========================================================================================================
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	&._loaded {
+	}
+}
+//</ОБОЛОЧКА>===========================================================================================================
+
+//<ОСНОВНАЯ СЕТКА>===========================================================================================================
+._container {
+	max-width: $maxWidthContainer + px;
+	margin: 0 auto;
+	@media (max-width: $md1+px) {
+		max-width: 970px;
+	}
+	@media (max-width: $md2+px) {
+		max-width: 750px;
+	}
+	@media (max-width: $md3+px) {
+		max-width: none;
+		padding: 0 10px;
+	}
+}
+//</ОСНОВНАЯ СЕТКА>===========================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+@import "forms";
+@import "ui";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+//@import "datepicker";
+//@import "lightgallery";
+//@import "pagging";
+@import "popup";
+@import "header";
+@import "footer";
+@import "home";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+
+//<ОСНОВНОЙ БЛОК>====================================================================================================
+.page {
+	flex: 1 1 auto;
+	&__header{
+		width: 100%;
+		height: 124px;
+		background-color: #000;
+	}
+}
+//===================================================================================================================================
+
+//</ОСНОВНОЙ БЛОК>====================================================================================================
+
+.page-description {
+	&__body {
+	}
+	&__container{
+	}
+	// .page-description__items
+	&__items{
+		position: relative;
+		z-index: 5;
+		width: 100%;
+		height: 810px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	// .page-description__logo
+	&__logo {
+		width: 320px;
+		height: 320px;
+		border: 2px solid #fff;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin-bottom: 80px;
+	}
+	// .page-description__logo-text
+	&__logo-text {
+		font-family: Post No Bills Jaffna;
+		font-size: 64px;
+		text-align: center;
+		color: #fff;
+		position: relative;
+		padding-bottom: 5px;
+		&::after{
+			content: "";
+			width: 180px;
+			height: 2px;
+			background-color: #fff;
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+	// .page-description__logo-city
+	&__logo-city {
+		font-family: $fontFamily;
+		font-size: 22px;
+		text-align: center;
+		text-transform: uppercase;
+		padding-top: 10px;
+		color: #fff;
+	}
+	// .page-description__text
+	&__text {
+		max-width: 730px;
+		font-family: $fontFamily;
+		font-size: 16px;
+		color:	#fff;
+		text-transform: uppercase;
+		line-height: 150%;
+		text-align: center;
+		flex: 0 1 auto;
+	}
+}
+.page-new-collection {
+	display: flex;
+}
+.page-new-collection-season {
+		// .page-new-collection-season__body
+		&__body {
+			width: 1040px;
+			height: 730px;
+			background-color: #000;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		// .page-new-collection-season__title
+		&__title {
+			margin-top: 105px;
+			padding-bottom: 50px;
+			margin-bottom: 50px;
+		}
+		// .page-new-collection-season__items
+		&__items {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			width: 880px;
+			
+		}
+}
+.page-new-collection-new-collection {
+		// .page-new-collection-new-collection__body
+		&__body {
+			width: 880px;
+			height: 730px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: flex-end;
+			position: relative;
+		}
+		// .page-new-collection-new-collection__img
+		&__img {
+		}
+		// .page-new-collection-new-collection__title
+		&__title {
+			padding-bottom: 30px;
+			margin-bottom: 30px;
+		}
+		// .page-new-collection-new-colletion__button
+		&__button {
+			z-index: 5;
+			margin-bottom: 100px;
+		}
+}
+.page-old-collektion {
+	// .page-old-collektion__body
+	&__body {
+		display: flex;
+		width: 100%;
+		height: 600px;
+	}
+	// .page-old-collektion__img
+	&__img {
+		display: flex;
+		padding: 0 21.5%;
+	}
+	// .page-old-collektion__info
+	&__info {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background-color: #000;
+	}
+	// .page-old-collektion__title
+	&__title {
+		margin-top: 110px;
+		padding-bottom: 40px;
+		margin-bottom: 40px;
+	}
+	// .page-old-collektion__text
+	&__text {
+		max-width: 470px;
+		color: #fff;
+		font-family: $fontFamily;
+		font-size: 14px;
+		line-height: 150%;
+		text-align: center;
+		flex: 1 1 auto;
+	}
+	// .page-old-collektion__button
+	&__button {
+		margin-bottom: 100px;
+	}
+}
+.page-collection-new {
+	width: 100%;
+	height: 100%;
+	background: #000;
+	// .page-collection__body
+	&__body {
+		padding: 120px 0 100px 0;
+	}
+	// .page-collection__title
+	&__title {
+		padding-bottom: 40px;
+		margin-bottom: 80px;
+	}
+	// .page-collection__items
+	&__items {
+	}
+	// .page-collection__items-first-line
+	&__items-first-line {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 40px;
+	}
+	// .page-collection__items-second-line
+	&__items-second-line {
+		@extend .page-collection-new__items-first-line;
+	}
+}
+.page-brends {
+	background-color: #0F0F0F;
+	width: 100%;
+	// .page-brends__body
+	&__body {
+		padding: 40px 0 80px 0;
+	}
+	// .page-brends__body-title
+	&__body-title {
+		padding-bottom: 40px;
+		margin-bottom: 40px;
+	}
+	// .page-brends__body-brends
+	&__body-brends {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	// .page-brends__body-brends-items
+	&__body-brends-items {
+		width: 255px;
+		height: 95px;
+	}
+}

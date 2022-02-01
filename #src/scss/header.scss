@@ -1,0 +1,178 @@
+//====================================================================================================
+.header{
+	position: relative;
+}
+.header__wrapper{
+	position: fixed;
+	width: 100%;
+	z-index: 50;
+}
+.header-top {
+	background-color: #000;
+	// .header-top__top
+	&__top {
+		display: flex;
+		height: 44px;
+		align-items: center;
+	}
+	// .header-top__info
+	&__info {
+		flex: 1 1 auto;
+	}
+	// .header-top__item-telefone
+	&__item {
+		font-family: $fontFamily;
+		font-size: 12px;
+		color: gray;
+		padding: 0 15px;
+		position: relative;
+		&::before{
+			content: "";
+			width: 1px;
+			height: 12px;
+			position: absolute;
+			left: 0;
+			top: 20%;
+			background-color: gray;
+		}
+		&:nth-child(1){
+			padding-left: 0;
+			&:nth-child(1)::before{
+				display: none;
+			}
+		}
+		&:active{
+			color: #fff;
+		}
+	}
+	// .header-top__registration
+	&__registration {
+		display: flex;
+		align-items: center;
+		color: gray;
+	}
+	// .header-top__log-in
+	&__log-in {
+		font-family: $fontFamily;
+		font-size: 12px;
+		padding: 0 5px;
+		color: gray;
+		&:active{
+			color: #fff;
+		}
+	}
+}
+.header-bottom {
+	background-color: #0F0F0F;
+	// .header-bottom__bottom
+	&__bottom {
+		height: 80px;
+		display: flex;
+		align-items: center;
+	}
+	// .header-bottom__logo
+	&__logo {
+		font-family: Post No Bills Jaffna;
+		color: #fff;
+		font-size: 36px;
+		font-weight: 700;
+		flex: 1 1 auto;
+	}
+	// .header-bottom__cart
+	&__cart {
+		font-size: 22px;
+		color: #fff;
+		padding-left: 40px;
+		transition: all 0.3s ease 0;
+		cursor: pointer;
+		&:active{
+			color: gray;
+		}
+	}
+	// .header-bottom__search
+	&__search {
+		@extend .header-bottom__cart;
+		margin-right: 5px;
+	}
+}
+.menu-header {
+	// .menu-header__icon
+	&__icon {
+	}
+	// .menu-header__menu
+	&__menu {
+		height: 80px;
+	}
+	// .menu-header__list
+	&__list {
+		height: 80px;
+		display: flex;
+		align-items: center;
+	}
+	// .menu-header__link
+	&__link {
+		width: 136px;
+		height: 80px;
+		font-family: $fontFamily;
+		font-size: 14px;
+		text-transform: uppercase;
+		color: gray;
+		padding: 30px 20px;
+		transition: all 0.3s ease 0s;
+		&:hover{
+			background: #1F1F1F;
+		}
+		&:active{
+			color: #fff;
+			background: #1F1F1F;
+		}
+	}
+}
+
+//====================================================================================================
+
+/*
+//Burger
+.icon-menu {
+	display: none;
+	@media (max-width: $md3+px) {
+		display: block;
+		position: absolute;
+		top: 18px;
+		right: 10px;
+		width: 30px;
+		height: 18px;
+		cursor: pointer;
+		z-index: 5;
+		span {
+			transition: all 0.3s ease 0s;
+			top: calc(50% - 1px);
+			left: 0px;
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			background-color: #000;
+			&:first-child {
+				top: 0px;
+			}
+			&:last-child {
+				top: auto;
+				bottom: 0px;
+			}
+		}
+		&._active {
+			span {
+				transform: scale(0);
+				&:first-child {
+					transform: rotate(-45deg);
+					top: calc(50% - 1px);
+				}
+				&:last-child {
+					transform: rotate(45deg);
+					bottom: calc(50% - 1px);
+				}
+			}
+		}
+	}
+}
+*/
